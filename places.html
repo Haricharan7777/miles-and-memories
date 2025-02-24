@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popular Places In India</title>
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-padding-top: 2rem;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+}
+:root{
+    --main-color:#218096;
+    --second-color:rgb(10, 124, 150);
+    --text-color:#444;
+    --gradient:linear-gradient(#fe5b3d, #ffac38);
+}
+html::-webkit-scrollbar{
+    width: 0.5rem;
+}
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+html::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+    border-radius: 5rem;
+}
+section{
+    padding: 50px 100px;
+}
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #eeeff1;
+    padding: 15px 100px;
+}
+.navbar{
+    display: flex;
+}
+.navbar li{
+    position: relative;
+}
+.navbar a{
+    font-size: 1rem;
+    padding: 10px 20px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+.navbar a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: var(--gradient);
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: 0.5s;
+}
+.navbar a:hover::after{
+    width: 100%;
+}
+.navbar{
+    display: flex;
+
+}
+.navbar li{
+    position: relative;
+}
+.navbar a{
+    font-size: 1rem;
+    padding: 10px 20px;
+    color: #06768a;
+    font-weight: 500;
+}
+.navbar a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #218096;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: 0.5s;
+}
+.navbar a:hover::after{
+    width: 100%;
+}
+.refer ul li a{
+    justify-content: end;
+    color: #ffffff;
+    font-size: large;
+    background-color: rgb(37, 126, 242);
+    padding: 10px 10px 10px 10px;
+   
+    border-radius: 10px;
+    
+}
+.refer ul li a:hover{
+    background-color: rgb(18, 172, 192); 
+    border-width: 20px;
+   
+    /* border-radius: 20px; */
+}
+#menu-icon{
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10001;
+    display: none;
+}
+.services-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,auto));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.services-container .box{
+    padding: 10px;
+    border-radius: 1rem;
+    box-shadow: 1px 4px 41px rgba(0,0,0,0.1);
+}
+.services-container .box .box-img{
+    width: 100%;
+    height: 200px;
+}
+.services-container .box .box-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    object-fit: cover;
+    object-position: center;
+}
+.services-container .box p{
+    padding: 0 10px;
+    border: 1px solid var(--text-color);
+    width: 58px;
+    border-radius: 0.5rem;
+    margin: 1rem 0 1rem;
+}
+.services-container .box h3{
+    font-weight: 500;
+    color: var(--second-color);
+}
+.services-container .box h2{
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0.2rem 0 0.5rem;
+}
+.services-container .box h2 span{
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--second-color);
+}
+.services-container .box .btn{
+    display: flex;
+    justify-content: center;
+    background: #474fa0;
+    color: #fff;
+    padding: 10px;
+    border-radius: 0.5rem;
+}
+.services-container .box .btn:hover{
+    background: var(--main-color);
+}
+.services a{
+    display: flex;
+    justify-content: center;
+    background: #474fa0;
+    color: #fff;
+    padding: 10px;
+    border-radius: 0.5rem;
+}
+.services a:hover{
+    background: var(--main-color);
+}
+.hill-stations .heading{
+    padding-top: 10px;
+    color:#218096;
+    font-weight: 500;
+}
+.beaches .heading{
+    padding: 0;
+    color: #218096;
+    font-weight: 500;
+}
+.adventure .heading{
+    padding: 0;
+    color: #218096;
+    font-weight: 500;
+}
+.historical .heading{
+    padding: 0;
+    color: #218096;
+    font-weight: 500;
+}
+.religious .heading{
+    padding: 0;
+    color: #218096;
+    font-weight: 500;
+}
+
+</style>
+</head>
+<body>
+    <header>
+        
+        <ul class="navbar">
+            <li><a href="#hill-stations">Hill Stations</a></li>
+            <li><a href="#beaches">Beaches & Coastal Areas</a></li>
+            <li><a href="#adventure">Adventure & Wildlife Trips</a></li>
+            <li><a href="#historical">Historical & Cultural Tours</a></li>
+            <li><a href="#religious">Spiritual & Religious Destinations</a></li>
+        </ul>
+        <div class="refer">
+        <ul >
+            <li><a href="home.html"><b>Home</b></a></li>
+        </ul>
+    </div>
+    </header>
+    <section class="hill-stations" id="hill-stations">
+        <div class="heading"><br>
+            <h1>Hill Stations</h1>
+        </div>
+        <div class="services-container">
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://i.ytimg.com/vi/UTXDF8pTR2I/maxresdefault.jpg" alt="">
+                </div><br>
+                <h2>Shimla 3N/4D</h2>
+                <h3><i class='bx bxs-calendar-alt'></i> 3 Nights And 4 Days</h3><br>
+                <a href="shimla.html" class="btn">Check Details</a>
+            </div>    
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://www.redplanettours.com/userfiles/image/content%20photo/darjeeling-imag-960x368.jpg" alt="">
+                </div><br>
+                <h2>Darjeeling 4N/5D</h2>
+                <h3><i class='bx bxs-calendar-alt'></i> 4 Nights And 5 Days</h3><br>
+                <a href="darjeeling.html" class="btn">Check Details</a>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://santoshtourandtravels.co.in/images/leh1.jpg" alt="">
+                </div><br>
+                <h2>Leh-Ladakh 4N/5D</h2>
+                <h3><i class='bx bxs-calendar-alt'></i> 4 Nights And 5 Days</h3><br>
+                <a href="leh-ladakh.html" class="btn">Check Details</a>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://cdn1.tripoto.com/media/filter/tst/img/2176903/Image/1639568010_munnar.png" alt="">
+                </div><br>
+                <h2>Munnar 4N/5D</h2>
+                <h3><i class='bx bxs-calendar-alt'></i> 4 Nights And 5 Days</h3><br>
+                <a href="munnar.html" class="btn">Check Details</a>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://i.ytimg.com/vi/gV1sxZPqFf0/maxresdefault.jpg" alt="">
+                </div><br>
+                <h2>Ooty 4N/5D</h2>
+                <h3><i class='bx bxs-calendar-alt'></i> 4 Nights And 5 Days</h3><br>
+                <a href="ooty.html" class="btn">Check Details</a>
+            </div>
+        </div>        
+    </section>
+    <section class="beaches" id="beaches">
+        <div class="heading">
+            <h1>Beaches & Coastal Areas</h1>
+        </div>
+        <div class="services-container">
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://www.travelengine.co/images/share/andaman-nicobar.jpg" alt="">
+                </div><br>
+                <h2>Andaman & Nicobar Islands 6N/7D</h2>
+                <h3><i class='bx bxs-calendar-alt'></i> 6 Nights And 7 Days</h3><br>
+                <a href="andaman.html" class="btn">Check Details</a>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808/7e186392206831.Y3JvcCwzMTcwLDI0ODAsMTY0LDA.jpg" alt="">
+                </div><br>
+                <h2>Varkala 4N/5D</h2>
+                <h3><i class='bx bxs-calendar-alt'></i> 4 Nights And 5 Days</h3><br>
+                <a href="varkala.html" class="btn">Check Details</a>
+            </div>
+                    <div class="box">
+                        <div class="box-img">
+                            <img src="https://static2.tripoto.com/media/filter/tst/img/395463/TripDocument/1592831681_1592831677815.jpg" alt="">
+                        </div><br>
+                        <h2>Gokarna 4N/5D</h2>
+                        <h3><i class='bx bxs-calendar-alt'></i> 4 Nights And 5 Days</h3><br>
+                        <a href="gokarna.html" class="btn">Check Details</a>
+                    </div>
+                    <div class="box">
+                        <div class="box-img">
+                            <img src="https://hariharapropertiesvizag.com/wp-content/uploads/2024/10/Top-10-Residential-Localities-in-Vizag-Best-Areas-to-Live-in-Visakhapatnam.jpg" alt="">
+                        </div><br>
+                        <h2>Vizag 3N/4D</h2>
+                        <h3><i class='bx bxs-calendar-alt'></i> 3 Nights And 4 Days</h3><br>
+                        <a href="vizag.html" class="btn">Check Details</a>
+                    </div>
+                    <div class="box">
+                        <div class="box-img">
+                            <img src="https://www.tajmahalinagra.com/wp-content/uploads/2023/08/Lakshadweep-1024x576.jpg
+                            " alt="">
+                        </div><br>
+                        <h2>Lakshadweep 6N/7D</h2>
+                        <h3><i class='bx bxs-calendar-alt'></i> 6 Nights And 7 Days</h3><br>
+                        <a href="lakshadweep.html" class="btn">Check Details</a>
+                    </div>
+        </div>    
+    </section>
+    <section class="adventure" id="adventure">
+        <div class="heading">
+            <h1>Adventure & Wildlife Trips</h1>
+        </div>
+        <div class="services-container">
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://i.pinimg.com/736x/db/6b/f9/db6bf9cfdb361bd0dea2e52b550d0dc6.jpg" alt="">
+                </div><br>
+                <h2>Rishikesh 4N/5D</h2>
+                <h3><i class='bx bxs-calendar-alt'></i> 4 Nights And 5 Days</h3><br>
+                <a href="rishikesh.html" class="btn">Check Details</a>
+            </div>
+                <div class="box">
+                    <div class="box-img">
+                        <img src="https://i.ytimg.com/vi/oDZHoywDQsg/maxresdefault.jpg" alt="">
+                    </div><br>
+                    <h2>Spiti Valley 6N/7D</h2>
+                    <h3><i class='bx bxs-calendar-alt'></i> 6 Nights And 7 Days</h3><br>
+                    <a href="spiti.html" class="btn">Check Details</a>
+                </div>
+                    <div class="box">
+                        <div class="box-img">
+                            <img src="https://www.studyiq.com/articles/wp-content/uploads/2023/03/21115247/National-Parks-in-Assam.jpg" alt="">
+                        </div><br>
+                        <h2>Assam 3N/4D</h2>
+                        <h3><i class='bx bxs-calendar-alt'></i> 3 Nights And 4 Days</h3><br>
+                        <a href="assam.html" class="btn">Check Details</a>
+                    </div>    
+                    <div class="box">
+                        <div class="box-img">
+                            <img src="https://www.i4utravels.com/wp-content/uploads/2021/03/1572436388_madhya_pradesh_web.jpg" alt="">
+                        </div><br>
+                        <h2>Madhya Pradesh 4N/5D</h2>
+                        <h3><i class='bx bxs-calendar-alt'></i> 4 Nights And 5 Days</h3><br>
+                        <a href="madhyapradesh.html" class="btn">Check Details</a>
+                    </div>    
+        </div>    
+    </section>
+    <section class="historical" id="historical">
+        <div class="heading">
+            <h1>Historical & Cultural Tours</h1>
+        </div>
+        <div class="services-container">
+            <div class="box">
+                <div class="box-img">
+                    <img src="tajmahal.png" alt="">
+                </div><br>
+                <h2>Taj Mahal(Agra) 2N/3D</h2>
+                <h3><i class='bx bxs-calendar-alt'></i> 2 Nights And 3 Days</h3><br>
+                <a href="tajmahal.html" class="btn">Check Details</a>
+            </div>
+                <div class="box">
+                    <div class="box-img">
+                        <img src="https://yashikatourandtravel.com/wp-content/uploads/2024/06/the-pink-city-travel-vlog-7.png" alt="">
+                    </div><br>
+                    <h2>Jaipur 4N/5D</h2>
+                    <h3><i class='bx bxs-calendar-alt'></i> 4 Nights And 5 Days</h3><br>
+                    <a href="jaipur.html" class="btn">Check Details</a>
+                </div>
+                    <div class="box">
+                        <div class="box-img">
+                            <img src="https://onedayitinerary.com/wp-content/uploads/2017/04/One-day-in-Udaipur-Itinerary-2.jpg" alt="">
+                        </div><br>
+                        <h2>Udaipur 4N/5D</h2>
+                        <h3><i class='bx bxs-calendar-alt'></i> 4 Nights And 5 Days</h3><br>
+                        <a href="udaipur.html" class="btn">Check Details</a>
+                    </div>    
+                    <div class="box">
+                        <div class="box-img">
+                            <img src="https://muddietrails.com/wp-content/uploads/2024/01/Hampi-Trip-Bangalore-Hyderabad-3.webp" alt="">
+                        </div><br>
+                        <h2>Hampi 4N/5D</h2>
+                        <h3><i class='bx bxs-calendar-alt'></i> 4 Nights And 5 Days</h3><br>
+                        <a href="hampi.html" class="btn">Check Details</a>
+                    </div>     
+                    <div class="box">
+                        <div class="box-img">
+                            <img src="https://static2.tripoto.com/media/filter/tst/img/1563491/TripDocument/1631896936_presentation1.jpg" alt="">
+                        </div><br>
+                        <h2>Mysore 3N/4D</h2>
+                        <h3><i class='bx bxs-calendar-alt'></i> 3 Nights And 4 Days</h3><br>
+                        <a href="mysore.html" class="btn">Check Details</a>
+                    </div>   
+        </div>    
+    </section>
+    <section class="religious" id="religious">
+        <div class="heading">
+            <h1>Spiritual & Religious Destinations</h1>
+        </div>
+        <div class="services-container">
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://ayodhyavaranasitourism.com/wp-content/uploads/2025/01/Varanasi-tour-packages-from-chennai.jpg" alt="">
+                </div><br>
+                <h2>Varanasi 4N/5D</h2>
+                <h3><i class='bx bxs-calendar-alt'></i> 4 Nights And 5 Days</h3><br>
+                <a href="varanasi.html" class="btn">Check Details</a>
+            </div>
+                <div class="box">
+                    <div class="box-img">
+                        <img src="https://i.pinimg.com/736x/6f/e0/f5/6fe0f5586907796cbb456396f6d76b2b.jpg" alt="">
+                    </div><br>
+                    <h2>Amritsar 3N/4D</h2>
+                    <h3><i class='bx bxs-calendar-alt'></i> 3 Nights And 4 Days</h3><br>
+                    <a href="golden.html" class="btn">Check Details</a>
+                </div>
+                    <div class="box">
+                        <div class="box-img">
+                            <img src="https://www.honeymoonbug.com/blog/wp-content/uploads/2023/01/Odisha-1.jpg" alt="">
+                        </div><br>
+                        <h2>Odisha 3N/4D</h2>
+                        <h3><i class='bx bxs-calendar-alt'></i> 3 Nights And 4 Days</h3><br>
+                        <a href="odisha.html" class="btn">Check Details</a>
+                    </div>    
+                    <div class="box">
+                        <div class="box-img">
+                            <img src="https://t4.ftcdn.net/jpg/05/08/88/31/360_F_508883138_LFvLZoIzopk3DxxlBxqn5vSkGkTxMBzu.jpg
+                            " alt="">
+                        </div><br>
+                        <h2>Madhurai 4N/5D</h2>
+                        <h3><i class='bx bxs-calendar-alt'></i> 4 Nights And 5 Days</h3><br>
+                        <a href="Madhurai.html" class="btn">Check Details</a>
+                    </div>     
+                    <div class="box">
+                        <div class="box-img">
+                            <img src="https://www.indiantempletour.com/wp-content/uploads/2016/10/tirupati-tour.jpg" alt="">
+                        </div><br>
+                        <h2>Tirupati 3N/4D</h2>
+                        <h3><i class='bx bxs-calendar-alt'></i> 3 Nights And 4 Days</h3><br>
+                        <a href="tirupati.html" class="btn">Check Details</a>
+                    </div>   
+        </div>    
+    </section>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        const sr = ScrollReveal ({
+            distance:'60px',
+            duration: 2500,
+            delay: 400,
+            reset: true
+        })
+
+        sr.reveal('.services-container .box',{delay: 600,  origin: 'top'})
+    </script>
+</body>
+</html>
